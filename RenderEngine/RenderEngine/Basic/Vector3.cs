@@ -76,6 +76,24 @@ public readonly struct Vector3
             left.Z * right.X - left.X * right.Z,
             left.X * right.Y - left.Y * right.X);
     }
+    public static Vector3 Max(Vector3 left, Vector3 right)
+    {
+        float x = (left.X > right.X) ? left.X : right.X;
+        float y = (left.Y > right.Y) ? left.Y : right.Y;
+        float z = (left.Z > right.Z) ? left.Z : right.Z;
+
+        return new Vector3(
+            x, y, z);
+    }
+    public static Vector3 Min(Vector3 left, Vector3 right)
+    {
+        float x = (left.X < right.X) ? left.X : right.X;
+        float y = (left.Y < right.Y) ? left.Y : right.Y;
+        float z = (left.Z < right.Z) ? left.Z : right.Z;
+
+        return new Vector3(
+            x, y, z);
+    }
 
     public bool Equals(Vector3 vector)
     {
